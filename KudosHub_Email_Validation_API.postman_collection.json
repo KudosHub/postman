@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "e3adb3ba-14ab-4234-a082-c169bdebcc54",
+		"name": "KudosHub_Email_Validation_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Single Email Validation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://leads.kudoshub.com/api/verifyEmail?email=replacewithyours&api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"leads",
+						"kudoshub",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "replacewithyours",
+							"description": "The email address you want to validate"
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "This API is for single email validation."
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Email Validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "CSV, TXT or XLS file.",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "https://leads.kudoshub.com/api/upload-and-validate?api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"leads",
+						"kudoshub",
+						"com"
+					],
+					"path": [
+						"api",
+						"upload-and-validate"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "This API allows user to upload a file for bulk email validation."
+			},
+			"response": []
+		},
+		{
+			"name": "Download Result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://leads.kudoshub.com/api/download-all-results?file_uid=replacewithyours&api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"leads",
+						"kudoshub",
+						"com"
+					],
+					"path": [
+						"api",
+						"download-all-results"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "replacewithyours",
+							"description": "The returned file UID when calling upload and validate API."
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "The API allows users to download the validation results or return current status for the file been submitted using upload and validate API."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Credit Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://leads.kudoshub.com/api/user/get-credits?api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"leads",
+						"kudoshub",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-credits"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "This API will tell you how many credits you have left on your account."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://leads.kudoshub.com/api/user/delete-file?file_uid=replacewithyours&api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"leads",
+						"kudoshub",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"delete-file"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "replacewithyours",
+							"description": "The returned file UID when calling upload and validate API."
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "This API is used for deleting existing validated file."
+			},
+			"response": []
+		}
+	]
+}
