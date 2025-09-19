@@ -1,0 +1,303 @@
+{
+	"info": {
+		"name": "KudosHub Email Validation API",
+		"description": "Postman Collection for KudosHub Email Validation API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate a Single Email",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/validate?email={{email}}&api_key={{api_key}}&score={{score}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"description": "The email address you want to validate."
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"description": "Your API Key"
+						},
+						{
+							"key": "score",
+							"value": "{{score}}",
+							"description": "Optional - true to get quality score"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Bulk Validator - Send File",
+			"request": {
+				"method": "POST",
+				"url": "http://api.kudoshub.com/v1/sendfile",
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						},
+						{
+							"key": "score",
+							"value": "{{score}}",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"description": "Upload CSV or TXT file"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Bulk Validator - File Status",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/filestatus?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"filestatus"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}",
+							"description": "Unique File UID"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Bulk Validator - Get File",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/getfile?file_uid={{file_uid}}&file_type={{file_type}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"getfile"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "file_type",
+							"value": "{{file_type}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Bulk Validator - Get All Files (ZIP)",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/getallfiles?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"getallfiles"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Bulk Validator - Delete File",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/deletefile?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"deletefile"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "AI Scoring - Send File",
+			"request": {
+				"method": "POST",
+				"url": "http://api.kudoshub.com/v1/scoring/sendfile",
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"description": "Upload CSV or TXT file"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "AI Scoring - File Status",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/scoring/filestatus?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"scoring",
+						"filestatus"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "AI Scoring - Get File",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/scoring/getfile?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"scoring",
+						"getfile"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "AI Scoring - Delete File",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/scoring/deletefile?file_uid={{file_uid}}&api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"scoring",
+						"deletefile"
+					],
+					"query": [
+						{
+							"key": "file_uid",
+							"value": "{{file_uid}}"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Credit Balance",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://api.kudoshub.com/v1/getcredits?api_key={{api_key}}",
+					"host": [
+						"http://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"getcredits"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			}
+		}
+	]
+}
