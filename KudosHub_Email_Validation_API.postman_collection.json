@@ -32,7 +32,7 @@
 						{
 							"key": "score",
 							"value": "{{score}}",
-							"description": "Set to 'true' to also receive a quality score for the email."
+							"description": "Determines which type of scoring result to include. Possible values: 'catchall', 'valid', or 'both'."
 						}
 					]
 				},
@@ -57,7 +57,7 @@
 							"key": "score",
 							"value": "{{score}}",
 							"type": "text",
-							"description": "Set to 'true' to also receive a quality score for the emails."
+							"description": "Determines which type of scoring result to include. Possible values: 'catchall', 'valid', or 'both'."
 						},
 						{
 							"key": "file",
