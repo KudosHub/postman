@@ -32,11 +32,41 @@
 						{
 							"key": "score",
 							"value": "{{score}}",
-							"description": "Determines which type of scoring result to include. Possible values: 'catchall', 'valid', or 'both'."
+							"description": "Set to 'true' to include AI deliverability score in the response, or 'false' to exclude it. Defaults to false if not provided."
 						}
 					]
 				},
 				"description": "API for single email address validation."
+			}
+		},
+		{
+			"name": "AI Scoring - Validate Single Email",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "https://api.kudoshub.com/v1/scoring/validate?email={{email}}&api_key={{api_key}}",
+					"host": [
+						"https://api.kudoshub.com"
+					],
+					"path": [
+						"v1",
+						"scoring",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"description": "The email address you want to score."
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"description": "Your unique API Key."
+						}
+					]
+				},
+				"description": "Score a single email address using AI deliverability scoring."
 			}
 		},
 		{
